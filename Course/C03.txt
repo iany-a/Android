@@ -1,0 +1,53 @@
+Activities
+android.app.Activity - base class
+
+Services
+android.app.Service - base class
+
+Content providers
+android.content.ContentProvider - base class
+
+Message receiver
+android.content.BroadcastReceiver - base class
+messages
+
+
+1.message receiver
+e.g.: low battery - in order for app to be able to receive and handle it, it must configure this type of broadcast inside the application receiver
+default is set to no
+
+-financial transactions app (RT) / game 
+when we go past a threshold battery life, it needs to prepare to go on stand-by
+-sms - in order to create an app to manage sms, we need to register the broadcast receiver to be able to intercept those messages
+the receiver is described in android manifest XML file
+manifest - picture of what our app can do
+when a message is being received, it will be delivered also to the application
+
+2. content provider - gives access to all data by means of a new RI - resource identifier, in this way protecting the content
+via RI we can only see the data and receive it, modify it or delete it
+we can mediate via a verb the access to the content
+
+e.g. collection of movies app - needs to be able to broadcast the movie list to a different app / share to other apps
+android apps by default run in sandbox mode, not connecting to any other external resource or system
+
+3. services - start a service on an app = start a new process inside the app
+-can only be accessed/consumed by another android app
+
+4.Activity - only component with an UI
+
+To make these components talk to each other, you need a carrier named Intents class android.content.Intent
+e.g. sending a message, triggering an action both use intent
+e.g. put content inside as they have a bundle
+intent holds down a hash map called bundle. in it we put elements of key-value pairs, where key1 can be a student, key2 can be the faculty, key3 an activity, etc.
+key = string, value = object
+
+Multiple stages of creation/destruction:
+-onSaveInstanceState - called before an activity must be destroyed
+-onRestoreInstanceState - called if a previous state of an activity was saved
+States:
+-Persistent state (db, content providers or files)
+-dynamic state (UI state or instance state)
+
+CTRL+O = Override methods
+CTRL+I = Override APIs coming in
+
