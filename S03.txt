@@ -1,0 +1,42 @@
+pull from git 
+new project -> empty activity
+language > java
+api 24
+
+git clone https://github.com/mihaidoinea/DMA2025.git
+to update: go inside the folder, run a command prompt and do git pull
+manually in cmd: D:
+cd D:\ASE\Y3+\Android\DMA2025
+git pull
+
+manifest is inspected first every time we run an app
+it will check which activity has the <intent-filter>
+
+R.layout.identifier
+R is the resources class - auto generated based on all the resources in the app.
+classes examples under R:
+R.layout
+R.string
+
+CTRL+click Main Activity text inside the class > opens the 
+
+Activity has 1 entry point through onCreate class, and 1 main entry point through the activity tag
+
+
+Log.wtf = what a terrible failure
+
+tags for the entire activity class or for each method
+
+
+applications contain multiple activities, content provides, services providers and receivers = COMPONENTS
+these will interact between them and with the OS of the machine
+
+
+
+
+CTRL+O inside a class = override menu
+CTRL+I inside a class = context (?)
+
+Log Filters
+package:mine & tag:ro.ase.ie.g1107_03.mainactivity
+
