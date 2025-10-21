@@ -1,0 +1,10 @@
+constraint layout - requires anchors for every element, tedious
+we will use linearview
+right click UI > convert view> linearview
+
+LinearLayout = LLv LLh (vertical, horizontal)
+containers hold controls
+
+vertical makes controls stack vertically, can not concatenate controls on same row
+horizontal does the same thing but in columns
+we can mix both
