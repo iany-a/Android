@@ -1,1 +1,2 @@
 INTENT -> BUNDLE -> HASHMAP <KEY, VALUE>
+INTENT ------putStringExtra------->HASHMAP
