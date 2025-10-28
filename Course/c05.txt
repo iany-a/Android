@@ -1,0 +1,87 @@
+APP FOLDER: DMA04
+
+XML - Properties and values called tags
+android:property for each individual element
+android:layout_property - found in LayoutParams class, send to the parent for positioning an element
+mandatory:
+android:layout_width and android_layout_height
+values: wrap_content or match_parent or constant values
+
+2 types:
+predefined: @android:resourceType/resourceName (everything starting with @android)
+in current project: @resourceType/resourceName
+
+using elements inside the code:
+1.setContentView()
+2.a GUI -> code: View findViewById - finds the resource
+2.b code > GUI
+TextView tv = (TextView) findViewById(R.id.textViewTitlul);
+tv.setText("text stabilit din cod");
+
+using an identifier:
+XML: @id/identifier
+JAVA: R.id.identifier
+
+GUI elements measurements:
+UI design: don't use px (pixels), don't use pt (points). Instead use: 
+-dp (density-independent pixels) - to scale GUI elements according to current machine running the app
+-sp (scale-independent pixels) - applied on fonts only
+
+scaling:
+ldpi 0.5
+mdpi 1.0
+hdpi 1.5
+xhdpi 2.0
+xxhdpi 3.0
+xxxhdpi 4.0
+dh = px*160/dpi
+px = dp*dpi/160
+
+scaling images ratio rule:
+3:4:6:8:12:16
+
+36x36 ldpi
+48x48 mdpi
+72x72 hdpi
+96x96 xhdpi
+144x144 xxhdpi
+192x192 xxxhdpi
+
+for each dpi size, we need to specify 1 specific image, or use svg
+
+e.g: if app requires 16px to detect a fling action:
+-16/160dpi = 1/10th of an inch, approx. 2.5mm
+-16/240dpi = 1/15th of an inch, approx. 1.7mm
+*notice the difference on dpi and actual swipeable area
+
+conversion engine code example:
+DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+int hPixels = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,20,displayMetrics);
+
+
+
+
+properties:
+container parameters
+setLayoutParams(Layout Params)
+LayoutParams getLayoutParams()
+
+visibility:
+ setVisiblity(int)
+
+
+course app:
+snackbar = temporary (timed) bar at the bottom that allows you to undo the recent change
+note: classes can use override methods as parameters that call other classes that override the same method in different scope.
+(big chain of {})
+
+With layout_weight you can specify a size ratio between multiple views. E.g. you have a MapView and a table which should show some additional information to the map. The map should use 3/4 of the screen and table should use 1/4 of the screen. Then you will set the layout_weight of the map to 3 and the layout_weight of the table to 1.
+
+To get it work you also have to set the height or width (depending on your orientation) to 0px.
+
+linear view does not have a ScrollView by default > we can have info on our app but only a portion of it is actually visible.
+
+
+
+
+

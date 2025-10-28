@@ -1,0 +1,4 @@
+XML Activities > yellow underlined strings > ALT+ENTER > Extract string resource
+
+@android.type/id comes from SDK
+@type/id comes from local project package we create
