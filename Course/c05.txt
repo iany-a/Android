@@ -80,6 +80,11 @@ With layout_weight you can specify a size ratio between multiple views. E.g. you
 To get it work you also have to set the height or width (depending on your orientation) to 0px.
 
 linear view does not have a ScrollView by default > we can have info on our app but only a portion of it is actually visible.
+!!!ScrollView needs to encapsulate the linearlayout in the XML file (not be declared outside of it) to allow the scroll bar to be visible.
+
+
+inflate() every time you want to render something
+
 
 
 
