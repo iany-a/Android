@@ -5,7 +5,14 @@ use 3rd party libraries considered wrappers on top of the SDK
 
 Web Services
 
-SOAP services - legacy - unsupported in Android by default, but supported via 3rd party libraries e.g. KSOAP - wrapper on top of SDK
+SOAP services   -legacy - unsupported in Android by default, but supported via 3rd party libraries e.g. kSOAP2 - wrapper on top of SDK
+		-simulate a Remote Procedure Call - RPC (inter-process communication)
+		-*serialization of objects in Android is done as to prevent unreachable pointers to the objects = the object is sent as a list of bytes with dummy fields in between
+		-elements: SoapObject, SoapSerializationEnvelope, etc
+		-uses WSDL to pass info via XML
+
+
+
 REST services   -used by most apps
 		-stateless - can't carry a state with them
 		-forced to use a longer processing flow on the server side in order to bypass the stateless propriety
@@ -13,4 +20,4 @@ REST services   -used by most apps
 		-the server processes the request and returns a JSON file
 		-the processes of sending and receiving data comes with a high security risk
 		-parameters in the URL (not encoded - raw) can be hacked (e.g. client ID can be shown in the URL)
-		-
+		
