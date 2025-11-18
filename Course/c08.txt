@@ -5,3 +5,12 @@ use 3rd party libraries considered wrappers on top of the SDK
 
 Web Services
 
+SOAP services - legacy - unsupported in Android by default, but supported via 3rd party libraries e.g. KSOAP - wrapper on top of SDK
+REST services   -used by most apps
+		-stateless - can't carry a state with them
+		-forced to use a longer processing flow on the server side in order to bypass the stateless propriety
+		-pass data to an endpoint via POST - query parameters - in the URL path
+		-the server processes the request and returns a JSON file
+		-the processes of sending and receiving data comes with a high security risk
+		-parameters in the URL (not encoded - raw) can be hacked (e.g. client ID can be shown in the URL)
+		-
