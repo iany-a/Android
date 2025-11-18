@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">testing</string>
+    <string-array name="hall_list">
+        <item>H001</item>
+        <item>H002</item>
+        <item>H003</item>
+        <item>H004</item>
+        <item>H005</item>
+    </string-array>
+</resources>

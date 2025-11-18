@@ -1,0 +1,46 @@
+1. Model package > new class with declared variables, constructor, setters and getters
+	-implements parcelable
+	-add the missing functions with a click
+	
+2. File -> New Activity -> Empty views activity (this is a 2nd screen if requested, otherwise use first one)
+3. In form activity (either 1 or 2 depending on what is asked):
+	- design the buttons and their labels with ids (e.g. etName,spGenre, etc) + A FINAL BUTTON FOR SAVING!
+	- declare them as variables inside the class by their ids (e.g. EditText, Spinner, etc)
+	- override onCreate, delete edge to edge and all that crap, leave only super.OnCreate(savedInstanceState)and setContentView(R..
+	- assign the values inside the class to the ids with etName = findViewById(R.id.etName)
+	-*if spinner inside, needs some extra XML code:
+		-go to res folder > values > strings
+		- add a <string-array name="whatever_list">
+				<item>item1</item>
+				<item>item2</item>
+				etc
+			</string-array> inside the <resources> tag
+		-go back to activity
+		-create:
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+			this, R.array.whatever_list, android.R.layout.simple_spinner_item
+		);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spDeclaredSpinnerElement.setAdapter(adapter);
+	
+	-assign the save button: btnSave.setOnClickListener(v->saveItem());
+	-declare this saveItem() function:
+		String name = etName.getText().toString().trim();
+		String dateStr = etDate.getText().toString().trim();
+		String spinnerTitle = spDeclaredSpinnerElement.getSelectedItem().toString();
+	-*if date is one model class member:
+		-declare at the top of this activity date format:
+	 		private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		-validate the data inside the saveItem() function: 
+			Date date;
+			try{
+            			date=sdf.parse(dateStr);
+        		} catch(ParseException e){
+            			etDate.setError("Use format yyyy-mm-dd");
+            			return;
+        		}
+	-build the object inside the same function using the constructor from the model class, but with the variables declared in this 	activity as parameters
+		DummyClass dummyClass = new DummyClass(name, desc, id, date, spinner_list...)
+	
+	
+	

@@ -1,0 +1,7 @@
+
+SOAP & REST Services / XML & JSON
+
+use 3rd party libraries considered wrappers on top of the SDK
+
+Web Services
+
