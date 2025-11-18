@@ -9,7 +9,11 @@ SOAP services   -legacy - unsupported in Android by default, but supported via 3
 		-simulate a Remote Procedure Call - RPC (inter-process communication)
 		-*serialization of objects in Android is done as to prevent unreachable pointers to the objects = the object is sent as a list of bytes with dummy fields in between
 		-elements: SoapObject, SoapSerializationEnvelope, etc
-		-uses WSDL to pass info via XML
+		-uses WSDL to pass info via XML:
+			-wsdl:message is a parameter
+		-Android: needs a separate thread
+		-443 = HTTPS protocol port
+		
 
 
 
@@ -20,4 +24,10 @@ REST services   -used by most apps
 		-the server processes the request and returns a JSON file
 		-the processes of sending and receiving data comes with a high security risk
 		-parameters in the URL (not encoded - raw) can be hacked (e.g. client ID can be shown in the URL)
+		-HTTP protocol - GET, POST, PUT, DELETE, etc. = text
+		-response: JSON or XML = text
+		-what we learn: how to parse XML and JSON files
+			->3 ways:
+				->
+		
 		
