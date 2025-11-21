@@ -26,8 +26,34 @@ REST services   -used by most apps
 		-parameters in the URL (not encoded - raw) can be hacked (e.g. client ID can be shown in the URL)
 		-HTTP protocol - GET, POST, PUT, DELETE, etc. = text
 		-response: JSON or XML = text
-		-what we learn: how to parse XML and JSON files
+		-what we learn: how to parse XML and JSON files (e.g. XML: Array of objects in a collection)
+			XML
 			->3 ways:
-				->
+				-SAX - Sequential reading of an XML file -inverse order events
+				 SAX Methods: getParser(), getSchema();
+				 SAXParserFactory =>>> XMLReader =>>> create SAXHandler and parse using the xmlReader
+				-XML Pull -Sequential reading - directly treated events
+				-DOM - hierarchical structure generated
 		
 		
+		
+		
+		
+		DOM - very tedious / time consuming
+			
+			JSON
+			-> JSONObject
+				getType(): getString(), getBoolean(), getInt() etc.
+			-uses Retrofit>>> POJO = 1:1 mapping between a JSON object and JAVA class
+			-code: HTTPConnectionService class: getData(), postData()
+			
+			
+			
+
+
+
+
+
+
+
+			
